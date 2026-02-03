@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verilys - Pure in every drop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #0B1A2E;  /* Xanh đậm chủ đạo */
+            --primary-medium: #1E3A5F;
+            --primary-light: #2A4B7C;
+            --accent-gold: #C8A97E;
+            --light-bg: #F8F9FA;
+            --text-dark: #1A1A1A;
+            --text-light: #5A6A7E;
+            --white: #FFFFFF;
+            --shadow: 0 8px 30px rgba(11, 26, 46, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #0B1A2E;
+            padding: 20px 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            color: var(--accent-gold);
+        }
+        .logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px;          /* chỉnh theo ý, 36–48px là đẹp */
+    width: auto;
+    display: block;
+}
+.logo img {
+    height: 42px;
+}
+
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 40px;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+       
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(11, 26, 46, 0.8), rgba(11, 26, 46, 0.6)), url('https://images.unsplash.com/photo-1548839140-29a749e2cf2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: var(--white);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+         .hero {
+    position: relative;
+    height: 100vh;
+    background: url('https://i.ibb.co/b5f69hBT/binhbong.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(11,26,46,0.9),
+        rgba(11,26,46,0.4)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent-gold);
+        }
+        
+        /* Section Styling */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-title h2 {
+            font-size: 42px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-gold);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 200px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--primary-medium);
+        }
+        
+        .about-text p {
+            margin-bottom: 25px;
+            color: var(--text-light);
+            font-size: 15px;
+            gap:100px ;
+        }
+        
+        .about-image {
+            flex: 1.5;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+            
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Bottles Section */
+        .bottles-section {
+            background-color: var(--light-bg);
+        }
+        
+        .bottle-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .bottle-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .bottle-card:hover {
+            transform: translateY(-15px);
+        }
+        
+        .bottle-img {
+            height: 550px;
+            overflow: hidden;
+        }
+        
+        .bottle-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .bottle-card:hover .bottle-img img {
+            transform: scale(1.1);
+        }
+        
+        .bottle-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .bottle-info h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .bottle-info p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+        
+        /* Heritage Section */
+        .heritage-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .heritage-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .heritage-item:hover {
+            background-color: var(--light-bg);
+            transform: translateY(-10px);
+        }
+        
+        .heritage-icon {
+            font-size: 48px;
+            color: var(--accent-gold);
+            margin-bottom: 25px;
+        }
+        
+        .heritage-item h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .heritage-item p {
+            color: var(--text-light);
+        }
+        
+        /* Pairing Section */
+        .pairing-section {
+            background: linear-gradient(to right, var(--primary-dark) 50%, var(--light-bg) 50%);
+            color: var(--white);
+        }
+        
+        .pairing-content {
+            display: flex;
+            align-items: center;
+        }
+        
+        .pairing-text {
+            flex: 1;
+            padding: 60px;
+            background-color: var(--primary-dark);
+        }
+        
+        .pairing-text h2 {
+            color: var(--white);
+            font-size: 36px;
+            margin-bottom: 25px;
+        }
+        
+        .pairing-text p {
+            margin-bottom: 20px;
+            font-size: 17px;
+            opacity: 0.9;
+        }
+        
+        .pairing-image {
+            flex: 1;
+            height: 500px;
+            background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 40px;
+            padding-right: 30px;
+        }
+        
+        .footer-col h3 {
+            font-size: 22px;
+            margin-bottom: 25px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-gold);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #CCCCCC;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-gold);
+            padding-left: 5px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #CCCCCC;
+            font-size: 14px;
+        }
+        
+        /* Cookie Consent */
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 20px;
+            z-index: 1001;
+            display: none;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cookie-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .cookie-text {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 20px;
+        }
+        
+        .cookie-text p {
+            margin-bottom: 10px;
+        }
+        
+        .cookie-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .cookie-btn {
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .accept-btn {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+        }
+        
+        .decline-btn {
+            background-color: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .cookie-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .pairing-content {
+                flex-direction: column;
+            }
+            
+            .pairing-section {
+                background: var(--primary-dark);
+            }
+            
+            .pairing-text {
+                padding: 40px;
+            }
+            
+            .pairing-image {
+                height: 400px;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                background-color: var(--primary-dark);
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+    <img src="https://i.ibb.co/Vp0dtZRw/logo-verilys.jpg" alt="Verilys - Pure in every drop">
+</a>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Trang chủ</a></li>
+                    <li><a href="our-water.html" class="active">Our Water</a></li> 
+                    <li><a href="#bottles">Chai thủy tinh</a></li>
+                    <li><a href="#heritage">Di sản</a></li>
+                    <li><a href="#pairing">Kết hợp với ẩm thực</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Hương vị Thuần khiết trong từng Giọt nước</h1>
+            <p>Verilys - Nước tinh khiết đóng chai thủy tinh cao cấp, khởi nguồn từ những mạch nước ngầm sâu nhất và được chắt lọc một cách tự nhiên qua nhiều tầng địa chất.</p>
+            <a href="#about" class="btn">Khám phá hành trình</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Câu chuyện về cái tên</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Verilys</h3>
+                    <p>Không chỉ là sự ghép chữ đơn thuần, mà là một cấu trúc ngôn ngữ được tính toán kỹ lưỡng, mang lại nhiều giá trị cho một thương hiệu nhắm tới sự hoàn mỹ.</p>
+                    <h3>Nguồn gốc & Ý nghĩa</h3>
+                    <p>"Veri" lấy từ "Veritas" (tiếng Latin): nghĩa là sự thật, chân thực.
+
+"Lys" gợi nhớ đến sự thanh khiết, tinh luyện (như trong "lysis", "purify"). Hợp nghĩa: "Sự thật thuần khiết" hay "Tinh túy chân thực".</p>
+                    <h3>Cảm nhận & Liên tưởng</h3>
+                    <p>Âm "Very" (rất, cực kỳ) ẩn trong từ, nhấn mạnh chất lượng vượt trội.
+
+Âm điệu hiện đại, sang trọng, dễ nhớ, phù hợp với thị trường quốc tế.</p>
+                    <h3>Thông điệp thương hiệu</h3>
+                    <p>Đối với sản phẩm: Cam kết về nguồn gốc minh bạch, thành phần nguyên bản và quy trình tinh chế tối ưu.
+
+Đối với khách hàng: Mang lại cảm giác tin cậy, an tâm và trải nghiệm tinh túy xứng đáng với bao bì thủy tinh cao cấp.</p>
+                    <a href="#heritage" class="btn" style="margin-top: 20px;">Tìm hiểu di sản</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://i.ibb.co/Vp0dtZRw/logo-verilys.jpg" alt="Nguồn nước Verilys">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottles Section -->
+    <section class="section bottles-section" id="bottles">
+        <div class="container">
+            <div class="section-title">
+                <h2>Chai Thủy Tinh Của Chúng Tôi</h2>
+            </div>
+            <div class="bottle-cards">
+                <div class="bottle-card">
+                    <div class="bottle-img">
+                        <img src="https://i.ibb.co/F41Ptmcc/350ml.png" alt="Chai Verilys cổ điển">
+                    </div>
+                    <div class="bottle-info">
+                        <h3>Chai 350ml</h3>
+                        <p>Thiết kế tinh tế với đường cong sang trọng, thể tích 350ml, hoàn hảo cho bàn ăn.</p>
+                    </div>
+                </div>
+                <div class="bottle-card">
+                    <div class="bottle-img">
+                        <img src="https://i.ibb.co/6Js9zVWv/500ml.png" alt="Chai Verilys cao cấp">
+                    </div>
+                    <div class="bottle-info">
+                        <h3>Chai 500ml</h3>
+                        <p>Thiết kế hiện đại với khối hình học tinh xảo, thể tích 500L, lý tưởng cho các sự kiện đặc biệt.</p>
+                    </div>
+                </div>
+                <div class="bottle-card">
+                    <div class="bottle-img">
+                        <img src="https://i.ibb.co/bjcST6Tp/1000ml.png" alt="Chai Verilys du lịch">
+                    </div>
+                    <div class="bottle-info">
+                        <h3>Chai 1000ml</h3>
+                        <p>Thiết kế gọn nhẹ với nắp đậy chắc chắn, thể tích 1000ml, hoàn hảo cho những chuyến đi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage Section -->
+    <section class="section" id="heritage">
+        <div class="container">
+            <div class="section-title">
+                <h2>Di Sản Verilys</h2>
+            </div>
+            <div class="heritage-content">
+                <div class="heritage-item">
+                    <div class="heritage-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Nguồn gốc tự nhiên</h3>
+                    <p>Sự cân bằng khoáng chất đặc biệt của Verilys là kết quả của hành trình 15 năm thấm qua các lớp đá tự nhiên sâu trong lòng đất. Chính vùng đất đặc biệt này đã mang lại cho nước hương vị cân bằng độc đáo.</p>
+                </div>
+                <div class="heritage-item">
+                    <div class="heritage-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Bảo vệ môi trường</h3>
+                    <p>Verilys chăm sóc nguồn nước và môi trường xung quanh, hôm nay và cho các thế hệ mai sau. Đó là lý do chúng tôi nỗ lực bảo tồn vẻ đẹp nguyên sơ và đa dạng sinh học phong phú của khu vực nguồn nước.</p>
+                </div>
+                <div class="heritage-item">
+                    <div class="heritage-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Di sản quý giá</h3>
+                    <p>Khu vực nguồn nước rộng 1.000 hectare của Verilys không chỉ có hệ động thực vật phong phú mà còn lưu giữ những câu chuyện lịch sử về vùng đất này. Đó là di sản quý giá được lưu giữ trong từng ngụm nước Verilys.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pairing Section -->
+    <section class="section pairing-section" id="pairing">
+        <div class="pairing-content">
+            <div class="pairing-text">
+                <h2>Hoàn hảo để kết hợp với ẩm thực</h2>
+                <p>Sự phổ biến của Verilys như một loại nước cao cấp dùng trong ẩm thực không phải là ngẫu nhiên. Sự pha trộn cân bằng của muối khoáng và các nguyên tố vi lượng giúp nó trở nên hoàn hảo để kết hợp với các món ăn từ nhiều nền ẩm thực khác nhau.</p>
+                <p>Từ New York đến Tokyo, từ Stockholm đến Cape Town, Verilys là lựa chọn hàng đầu tại nhiều nhà hàng tốt nhất thế giới, được biết đến và yêu thích bởi những người sành ăn và tất cả những ai trân trọng hương vị tinh tế trong cuộc sống.</p>
+                <a href="#bottles" class="btn" style="margin-top: 20px; background-color: var(--white); color: var(--primary-dark);">Khám phá bộ sưu tập chai</a>
+            </div>
+            <div class="pairing-image"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Verilys</h3>
+                    <p>Nước tinh khiết đóng chai thủy tinh cao cấp, mang đến hương vị thuần khiết và trải nghiệm thượng hạng.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/1AmDxqz1pD/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+    <h3>Liên kết</h3>
+    <ul class="footer-links">
+        <li><a href="#home">Trang chủ</a></li>
+        <!-- Thêm liên kết đến trang our-water.html -->
+        <li><a href="our-water.html">Our Water</a></li>
+        <li><a href="#bottles">Sản phẩm</a></li>
+        <li><a href="#heritage">Di sản</a></li>
+        <li><a href="#pairing">Ẩm thực</a></li>
+    </ul>
+</div>
+                <div class="footer-col">
+                    <h3>Liên hệ</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> 
+79 Hồ Tùng Mậu, Hanoi, Vietnam</li>
+                        <li><i class="fas fa-phone" style="margin-right: 10px;"></i> +84 92 893 09 30</li>
+                        <li><i class="fas fa-envelope" style="margin-right: 10px;"></i> verilys.tmu@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Verilys. Tất cả các quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <p>Chúng tôi sử dụng cookie để cải thiện trải nghiệm duyệt web của bạn. Bằng cách tiếp tục sử dụng trang web này, bạn đồng ý với việc sử dụng cookie của chúng tôi.</p>
+                <p><a href="#" style="color: var(--accent-gold);">Tìm hiểu thêm về cookie của chúng tôi</a></p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn accept-btn" id="acceptCookies">Chấp nhận</button>
+                <button class="cookie-btn decline-btn" id="declineCookies">Từ chối</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Cookie Consent Logic
+        const cookieConsent = document.getElementById('cookieConsent');
+        const acceptCookiesBtn = document.getElementById('acceptCookies');
+        const declineCookiesBtn = document.getElementById('declineCookies');
+        
+        // Check if user has already made a choice
+        if(!localStorage.getItem('cookieConsent')) {
+            // Show cookie consent after 2 seconds
+            setTimeout(() => {
+                cookieConsent.style.display = 'block';
+            }, 2000);
+        }
+        
+        // Handle cookie acceptance
+        acceptCookiesBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieConsent.style.display = 'none';
+        });
+        
+        // Handle cookie rejection
+        declineCookiesBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'declined');
+            cookieConsent.style.display = 'none';
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.padding = '15px 0';
+                header.style.backgroundColor = 'rgba(11, 26, 46, 0.98)';
+            } else {
+                header.style.padding = '20px 0';
+                header.style.backgroundColor = '#0B1A2E';
+            }
+        });
+    </script>
+</body>
+</html>
